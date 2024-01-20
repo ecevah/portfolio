@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 13, 12, 12;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+body {
+  background-color: rgb(var(--foreground-rgb));
+  font-family: "Poppins", sans-serif;
+  zoom: 0.8;
+  width: 10%;
+  height: 10%;
+  overflow: hidden;
+  position: relative;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.sidebar {
+  z-index: 99999;
+}
+
+.bgtext {
+  z-index: -1;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  color: transparent;
+  font-size: 500px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255, 0.3);
+}
+@media only screen and (max-width: 950px) {
+  .deneme {
+    font-size: 300px;
+    top: 30%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .deneme {
+    font-size: 200px;
+    top: 35%;
+  }
+}
+
+.about {
+  zoom: 0.95;
+  overflow: scroll;
+}
+
+.about::-webkit-scrollbar {
+  display: none;
+}
+
+.buttons {
+  color: white;
+}
+
+.buttons:hover {
+  color: #ff7e21;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.projects::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 1170px) {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
+  }
+}
+
+@media only screen and (max-height: 760px) {
+  .about {
+    padding-bottom: 500px !important;
+  }
+  .projects {
+    padding-bottom: 400px !important;
+  }
+}
+
+@media only screen and (max-height: 470px) {
+  .about {
+    padding-bottom: 600px !important;
+  }
+  .projects {
+    padding-bottom: 500px !important;
+  }
+  .contact {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    align-items: start;
+  }
+  .contact::-webkit-scrollbar {
+    display: none !important;
+  }
+  .contact-title {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .contact-title {
+    font-size: 30px;
+  }
+}
