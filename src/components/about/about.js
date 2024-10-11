@@ -29,46 +29,46 @@ export default function About(props) {
           <div className="w-[61px] h-[1px] bg-[#FF7E21]"></div>
           {props.language ? (
             <p className="text-[23px] text-white mt-[70px] cursor-default min-[1500px]:w-[80%] max-[500px]:text-center max-[1000px]:mt-[40px]">
-              I am a computer engineering student and I want to focus my career
-              as a
-              <span className="text-[#FF7E21]"> Full Stack Web Developer.</span>{" "}
-              I have a comprehensive knowledge and skill set in web development.
-              Additionally, I have developed leadership and teamworking skills
-              through various work experiences. During my education, I learned
-              fundamental web technologies such as{" "}
-              <span className="text-[#FF7E21]">HTML, CSS,</span> and{" "}
-              <span className="text-[#FF7E21]">JavaScript</span> and I have
-              worked on projects using modern frameworks like{" "}
-              <span className="text-[#FF7E21]">React.js, Next.js,</span> and{" "}
-              <span className="text-[#FF7E21]">Node.js.</span> I also have
-              experience in database management. In addition to this, I develop
-              mobile applications using{" "}
-              <span className="text-[#FF7E21]">Flutter</span> language.
-              Furthermore, I have worked in logistics companies as a vehicle
-              manager and assistant general manager, which has enhanced my
-              organizational, time management, and problem-solving skills. I am
-              a good communicator, a fast learner, and a problem solver.
+              I began my Computer Engineering education in Izmir and focused my
+              career on web technologies. During a voluntary internship at
+              Fonetsan, I developed my first website. In 2023, with the Logos
+              Team that I founded, we achieved second place in the Teknofest
+              category for Technological Applications in Psychology. After Logos
+              dissolved, I established the Psynexa team, focusing on mobile
+              development, and we placed fifth in the Teknofest Entrepreneurship
+              Health Technologies Pre-Incubation Category. I expanded my
+              experience with a five-month long-term internship as an IoT
+              Developer at Enko Control Systems. During this period, by pivoting
+              the Psynexa project twice, we earned the Seal of Excellence in the
+              TÜBİTAK Bigg call. Currently, I am working as a{" "}
+              <span className="text-[#FF7E21]">Full Stack Web Developer</span>{" "}
+              at Üniteks. In my projects, I use technologies like
+              <span className="text-[#FF7E21]">
+                React.js, React Native, Flutter, Next.js, Express.js
+              </span>{" "}
+              and <span className="text-[#FF7E21]">FastAPI.</span>
             </p>
           ) : (
             <p className="text-[23px] text-white mt-[70px] cursor-default min-[1500px]:w-[80%] max-[500px]:text-center  max-[1000px]:mt-[40px]">
-              Bilgisayar Mühendisliği öğrencisiyim ve Full Stack Web Developer
-              olarak kariyerime odaklanmak istiyorum. Web geliştirme konusunda
-              kapsamlı bir bilgi ve beceri setine sahibim. Ayrıca, farklı iş
-              deneyimlerimle liderlik ve takım çalışması becerilerimi
-              geliştirdim. Öğrenimim sırasında{" "}
-              <span className="text-[#FF7E21]">HTML, CSS,</span> ve{" "}
-              <span className="text-[#FF7E21]">JavaScript</span> gibi temel web
-              teknolojilerini öğrendim ve{" "}
-              <span className="text-[#FF7E21]">React.js, Next.js,</span> ve{" "}
-              <span className="text-[#FF7E21]">Node.js.</span> gibi modern
-              framework'leri kullanarak projeler geliştirdim. Veritabanı
-              yönetimi konusunda da deneyimim bulunmaktadır. Buna ekstra olarak
-              da <span className="text-[#FF7E21]">Flutter</span>
-              dili ile de mobile uygulamalar da geliştirmekteyim. Ayrıca,
-              lojistik firmalarında araç sorumlusu ve genel müdür yardımcısı
-              olarak çalışarak organizasyon, zaman yönetimi ve problem çözme
-              becerilerimi geliştirdim. İyi iletişim kurabilen, hızlı öğrenen ve
-              problem çözen biriyim.
+              2020 yılında İzmir'de Bilgisayar Mühendisliği eğitimime başladım
+              ve kariyerimi web teknolojileri üzerine yoğunlaştırdım. Fonetsan
+              firmasında yaptığım gönüllü stajda ilk web sitemi geliştirdim.
+              2023 yılında kurduğum Logos Ekibi ile Teknofest Psikolojide
+              Teknolojik Uygulamalar kategorisinde ikincilik elde ettik.
+              Logos'un dağılmasının ardından, Psynexa ekibini kurarak mobil
+              geliştirme alanında çalışmaya başladım ve Teknofest Girişim Sağlık
+              Teknolojileri Ön Kuluçka Kategorisinde beşinci olduk. 5 aylık uzun
+              dönem stajımı Enko Kontrol Sistemleri'nde IoT Developer olarak
+              yaparak deneyimlerimi genişlettim. Bu süreçte Psynexa projesini
+              iki defa pivot ederek TÜBİTAK Bigg çağrısında Mükemmelliyet Mührü
+              kazandık. Şu anda Üniteks'te{" "}
+              <span className="text-[#FF7E21]">Full Stack Web Developer</span>{" "}
+              olarak görev almaktayım. Projelerimde{" "}
+              <span className="text-[#FF7E21]">
+                React.js, React Native, Flutter, Next.js, Express.js
+              </span>{" "}
+              ve <span className="text-[#FF7E21]">FastAPI</span> gibi
+              teknolojileri kullanıyorum.
             </p>
           )}
         </div>
