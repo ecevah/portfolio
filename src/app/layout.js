@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         `}
         </Script>
       </head>
-      <body className="w-[100%] h-[100vh] overflow-hidden">{children}</body>
+      <body className="w-[100%] h-[100dvh] overflow-hidden">{children}</body>
     </html>
   );
 }
