@@ -47,6 +47,7 @@ export default function Projects(props) {
                           width={300}
                           height={150}
                           className="rounded-md"
+                          unoptimized
                         />
                       )}
 
@@ -84,6 +85,7 @@ export default function Projects(props) {
                           width={300}
                           height={150}
                           className="rounded-md"
+                          unoptimized
                         />
                       )}
                       <div className="text-[22px] text-white mt-[25px] cursor-default">
