@@ -42,7 +42,7 @@ export default function About(props) {
               the Psynexa project twice, we earned the Seal of Excellence in the
               TÜBİTAK Bigg call. Currently, I am working as a{" "}
               <span className="text-[#FF7E21]">Full Stack Web Developer</span>{" "}
-              at Üniteks. In my projects, I use technologies like
+              at Üniteks. In my projects, I use technologies like{" "}
               <span className="text-[#FF7E21]">
                 React.js, React Native, Flutter, Next.js, Express.js
               </span>{" "}
