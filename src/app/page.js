@@ -30,8 +30,8 @@ export default function Home() {
     let touchStartY = 0;
     let touchStartX = 0;
 
-    // Scroll işlemini debounce etmek için
-    const handleScroll = (direction) => {
+    // Section geçişi için
+    const handleSectionTransition = (direction) => {
       if (isScrolling) return;
 
       // Sadece mobil ve tablet için (1340px altı)
@@ -50,11 +50,27 @@ export default function Home() {
       setTimeout(() => setIsScrolling(false), 1500);
     };
 
-    // Mouse wheel eventi
+    // Mouse wheel eventi - sadece scroll bar sonunda çalışsın
     const handleWheel = (e) => {
-      e.preventDefault();
-      const direction = e.deltaY > 0 ? "down" : "up";
-      handleScroll(direction);
+      const element = document.documentElement;
+      const scrollTop = element.scrollTop;
+      const scrollHeight = element.scrollHeight;
+      const clientHeight = element.clientHeight;
+
+      // Sadece mobil ve tablet için (1340px altı)
+      const isMobile = window.innerWidth < 1340;
+      if (!isMobile) return;
+
+      // Scroll bar en altta ve aşağı scroll yapılıyorsa
+      if (scrollTop + clientHeight >= scrollHeight - 5 && e.deltaY > 0) {
+        e.preventDefault();
+        handleSectionTransition("down");
+      }
+      // Scroll bar en üstte ve yukarı scroll yapılıyorsa
+      else if (scrollTop <= 5 && e.deltaY < 0) {
+        e.preventDefault();
+        handleSectionTransition("up");
+      }
     };
 
     // Touch eventi başlangıcı
@@ -78,7 +94,7 @@ export default function Home() {
       if (Math.abs(deltaY) < 50) return;
 
       const direction = deltaY > 0 ? "down" : "up";
-      handleScroll(direction);
+      handleSectionTransition(direction);
     };
 
     // Event listener'ları ekle
