@@ -22,6 +22,79 @@ export default function Home() {
   const [page, setPage] = useState(0);
   const [language, setLanguage] = useState(true);
   const [show, setShow] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  // Scroll ve touch event handler'ları
+  useEffect(() => {
+    let scrollTimeout;
+    let touchStartY = 0;
+    let touchStartX = 0;
+
+    // Scroll işlemini debounce etmek için
+    const handleScroll = (direction) => {
+      if (isScrolling) return;
+
+      // Sadece mobil ve tablet için (1340px altı)
+      const isMobile = window.innerWidth < 1340;
+      if (!isMobile) return;
+
+      setIsScrolling(true);
+
+      if (direction === "down") {
+        setPage((prev) => (prev < 3 ? prev + 1 : prev));
+      } else if (direction === "up") {
+        setPage((prev) => (prev > 0 ? prev - 1 : prev));
+      }
+
+      // 1.5 saniye boyunca scroll işlemi engellensin
+      setTimeout(() => setIsScrolling(false), 1500);
+    };
+
+    // Mouse wheel eventi
+    const handleWheel = (e) => {
+      e.preventDefault();
+      const direction = e.deltaY > 0 ? "down" : "up";
+      handleScroll(direction);
+    };
+
+    // Touch eventi başlangıcı
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+    };
+
+    // Touch eventi bitişi
+    const handleTouchEnd = (e) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchEndX = e.changedTouches[0].clientX;
+
+      const deltaY = touchStartY - touchEndY;
+      const deltaX = Math.abs(touchStartX - touchEndX);
+
+      // Yatay kaydırma çok fazlaysa ignore et
+      if (deltaX > 50) return;
+
+      // Minimum 50px dikey kaydırma gerekli
+      if (Math.abs(deltaY) < 50) return;
+
+      const direction = deltaY > 0 ? "down" : "up";
+      handleScroll(direction);
+    };
+
+    // Event listener'ları ekle
+    const element = document.body;
+    element.addEventListener("wheel", handleWheel, { passive: false });
+    element.addEventListener("touchstart", handleTouchStart, { passive: true });
+    element.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    // Cleanup
+    return () => {
+      element.removeEventListener("wheel", handleWheel);
+      element.removeEventListener("touchstart", handleTouchStart);
+      element.removeEventListener("touchend", handleTouchEnd);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
+  }, [isScrolling]);
 
   const settings = {
     dots: false,
