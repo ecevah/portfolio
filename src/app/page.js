@@ -493,7 +493,7 @@ export default function Home() {
           </div>
           <div
             onClick={() => setShow(!show)}
-            className="min-[1340px]:hidden scale-[1.7]"
+            className="min-[1340px]:hidden max-[768px]:hidden scale-[1.7]"
           >
             <RiMenu3Line className="buttons" />
           </div>
